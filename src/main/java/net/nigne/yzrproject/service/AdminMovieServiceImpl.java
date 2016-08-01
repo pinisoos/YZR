@@ -52,5 +52,10 @@ public class AdminMovieServiceImpl implements AdminMovieService {
 		dao.persist(vo);
 		dao.persistGenre(gvo);
 	}
-
+	@Transactional(rollbackFor={Exception.class})
+	@Override
+	public void statusMovie(String movie_id, String status) throws Exception {
+		// TODO Auto-generated method stub
+		dao.statusMovie(movie_id, status);
+	}
 }

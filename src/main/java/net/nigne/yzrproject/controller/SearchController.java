@@ -40,6 +40,21 @@ public class SearchController {
 	SearchService ss;
 	
 	/** 
+	* @Method Name : SearchIndex  
+	* @Method	   : 설명... 
+	* @param search
+	* @param model
+	* @param request
+	* @return
+	* @throws Exception 
+	*/
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	public String SearchIndex(Model model,HttpServletRequest request) throws Exception {
+		
+		return "search";
+	}
+	
+	/** 
 	* @Method Name : home  
 	* @Method	   : 설명... 
 	* @param search
@@ -81,7 +96,7 @@ public class SearchController {
 	* @return
 	* @throws Exception 
 	*/
-	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	@RequestMapping(value = "/search/result", method = RequestMethod.GET)
 	public ResponseEntity<Map<String,Object>> SearchAll(Model model,HttpSession session) throws Exception {
 		
 		String search = session.getAttribute("search").toString();

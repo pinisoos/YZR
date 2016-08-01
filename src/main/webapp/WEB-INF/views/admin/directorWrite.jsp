@@ -37,7 +37,9 @@
 			</select>
 		</div>
 		<label class="col-sm-1">사진</label>
-			<input type="file" id="file" name="file" size="60" />
+		<div>
+			<input type="file" id="file" name="file" size="60" style="padding-left: 20px;"/>
+		</div>
 		<div style="clear: both; margin-left: 300px;">
 			<button type="submit" class="btn btn-primary">등록</button>
 		</div>

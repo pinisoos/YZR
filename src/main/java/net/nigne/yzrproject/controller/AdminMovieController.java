@@ -51,7 +51,6 @@ public class AdminMovieController {
 		}
 		return entity;
 	}
-
 	@RequestMapping(value = "/admin/movie/{page}", method = RequestMethod.GET)
 	public ResponseEntity<Map<String, Object>> movieList(@PathVariable("page") Integer page, @RequestParam("keyword") String keyword,
 															@RequestParam("search") String search) {
@@ -111,6 +110,7 @@ public class AdminMovieController {
 		vo.setSite(site);
 		vo.setStory(story);
 		vo.setPoster(fileName);
+		vo.setStatus("schedule");
 		
 		GenreVO gvo=new GenreVO();
 		gvo.setMovie_id(movie_id);
@@ -121,5 +121,18 @@ public class AdminMovieController {
 		ModelAndView view=new ModelAndView();
 		view.setViewName("admin/movie");
 		return view;
+	}
+	@RequestMapping(value = "/admin/movie/{movie_id}/{status}", method = RequestMethod.PUT)
+	public ResponseEntity<String> statusMovie(@PathVariable("movie_id") String movie_id, @PathVariable("status") String status) throws Exception{
+
+		ResponseEntity<String> entity = null;
+		
+		try{
+			service.statusMovie(movie_id, status);
+			entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK);
+		}catch(Exception e){
+			entity = new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+		}
+		return entity;
 	}
 }

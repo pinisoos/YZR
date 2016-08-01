@@ -34,7 +34,8 @@ th, td{
 		<select class="form-control" id="keyword" name=""keyword"">
 			<option value="movie_id" selected="selected">영화ID</option>
 			<option value="title">제목</option>
-		</select> <input type="text" class="form-control" id="search" name="search">
+		</select>
+		<input type="text" class="form-control" id="search" name="search">
 		<input type="submit" class="btn btn-default" value="검색" onclick="getMovieList(1);">
 	</div>
 </div>
@@ -65,6 +66,12 @@ th, td{
 			+ "</td>"
 			+ "<td>"
 			+ this.moviegoers_cnt
+			+ "</td>"
+			+ "<td>"
+			+ "<input type='button' id='btn_play' name='btn_play' class='btn btn-primary' onclick=playMovie('" + this.movie_id + "'); value='개봉' />"
+			+ "</td>"
+			+ "<td>"
+			+ "<input type='button' id='btn_end' name='btn_end' class='btn btn-primary' onclick=endMovie('" + this.movie_id + "'); value='종료' />"
 			+ "</td>"
 			+ "<td>"
 			+ "<input type='button' id='btn_del' name='btn_del' class='btn btn-danger' onclick=deleteMovie('" + this.movie_id + "'); value='삭제' />"
@@ -134,6 +141,32 @@ th, td{
 				if(result == "SUCCESS"){
 					getMovieList(currentPage);
 				}
+			}
+		});
+	}
+	function playMovie(movie_id){
+		$.ajax({
+			type : 'put',
+			url : '/admin/movie/' + movie_id + '/play',
+			headers : { 
+				"Content-Type" : "application/json"
+				},
+			dataType : 'text',
+			success : function(result){
+				alert("변경되었습니다.");
+			}
+		});
+	}
+	function endMovie(movie_id){
+		$.ajax({
+			type : 'put',
+			url : '/admin/movie/' + movie_id+ '/end',
+			headers : { 
+				"Content-Type" : "application/json"
+				},
+			dataType : 'text',
+			success : function(result){
+				alert("변경되었습니다.");
 			}
 		});
 	}

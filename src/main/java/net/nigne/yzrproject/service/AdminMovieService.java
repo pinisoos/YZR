@@ -12,4 +12,5 @@ public interface AdminMovieService {
 	public void persist(MovieVO vo, GenreVO gvo) throws Exception;
 	public List<MovieVO> getSearchMovieList(Criteria cri, String keyword, String search);
 	public Long getMovieSearchCount(String keyword, String search);
+	public void statusMovie(String movie_id,String status) throws Exception;
 }

@@ -11,6 +11,8 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 </head>
 <body>
 <style>
@@ -89,6 +91,7 @@ font {
 							<a class="dropdown-toggle" data-toggle="dropdown" href="#"><font style="font-size: 15pt; font-weight: bold;">영화</font></a>
 							<ul class="dropdown-menu">
 								<li><a href="/movie">무비 차트</a></li>
+								<li><a href="/search">무비 파인더</a></li>
 							</ul>
 						</li>
 						<li class="dropdown" style="float: none; display: inline-block;">

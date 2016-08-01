@@ -36,12 +36,12 @@ public class ActorVO {
 	String actor_company;
 	
 	public ActorVO(String actor_name, String actor_age, String actor_photo){
-		setActor_name(actor_name);
-		setActor_age(actor_age);
-		setActor_photo(actor_photo);
+		this.actor_name = actor_name;
+		this.actor_age = actor_age;
+		this.actor_photo = actor_photo;
 	}
-
-	public ActorVO() {
+	
+	public ActorVO(){
 		
 	}
 

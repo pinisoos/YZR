@@ -12,7 +12,7 @@
 <div class="content" style="margin-left: 250px;">
 	<h2>상영시간 등록</h2><br><br>
 	<form id="timetableWritefrm" role="form" action="/admin/timetable/new" method="post">
-		<label class="col-sm-2">영화ID</label>
+		<label class="col-sm-2">영화 타이틀</label>
 		<div class="col-md-3">
 			<select id="movie_id" name="movie_id">
 				<c:forEach items="${ moviename_list }" var="list">
@@ -20,7 +20,7 @@
 				</c:forEach>
 			</select>
 		</div>
-		<label class="col-sm-2">영화관ID</label>
+		<label class="col-sm-2">영화관 이름</label>
 		<div class="col-md-3">
 			<select id="theater_id" name="theater_id">
 				<c:forEach items="${ theatername_list }" var="list">

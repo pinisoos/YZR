@@ -42,7 +42,7 @@ public class SearchVO {
 	private String title;
 	
 	@Column(name = "open_date", table="movie")
-	private Timestamp open_date;
+	private String open_date;
 	
 	@Column(name = "runtime", table="movie")
 	private int runtime;
@@ -219,11 +219,11 @@ public class SearchVO {
 		this.title = title;
 	}
 
-	public Timestamp getOpen_date() {
+	public String getOpen_date() {
 		return open_date;
 	}
 
-	public void setOpen_date(Timestamp open_date) {
+	public void setOpen_date(String open_date) {
 		this.open_date = open_date;
 	}
 

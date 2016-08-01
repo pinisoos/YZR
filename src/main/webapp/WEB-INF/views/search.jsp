@@ -40,6 +40,8 @@
 		}
 		
 	</style>
+	
+	<!-- 검색창 -->
 	<div style="clear: both; width: 100%; height: 34px;">
 		<form class="form" action="/search" method="post">
 			<div class="form-group" style="clear: both; width: 100%; height: 34px;">
@@ -52,108 +54,74 @@
 			</div>	
 		</form>
 	</div>
-	<ul id="searchCategory" class="nav nav-tabs col-sm-offset-4 searchCategory" style="clear: both; margin-top: 20px; width: 300px; margin: 0 auto; margin-top: 10px; font-size: 15px; font-weight: bold;">
-		<li><a href="javascript:getSerachList()">전체</a></li>
-		<li><a href="javascript:getMovieList(1)">영화</a></li>
-		<li><a href="javascript:getActorList(1)">배우</a></li>
-		<li><a href="javascript:getDirectorList(1)">감독</a></li>
-	</ul>
+	
+	<!-- 카테고리 전체/영화/배우/감독 -->
+	<div>
+		<ul id="searchCategory" class="nav nav-tabs col-sm-offset-4 searchCategory" style="clear: both; margin-top: 20px; width: 256px; margin: 0 auto; margin-top: 10px; font-size: 15px; font-weight: bold;">
+			<li class="active"><a id="searchAll" href="javascript:getSearchList()">전체</a></li>
+			<li><a id="searchMovie" href="javascript:getMovieList(1)">영화</a></li>
+			<li><a id="searchActor" href="javascript:getActorList(1)">배우</a></li>
+			<li><a id="searchDirector" href="javascript:getDirectorList(1)">감독</a></li>
+		</ul>
+	</div>
+	<!-- 목록 -->
 	<div id="listWrapper" style="clear: both; width: 100%;margin-top: 20px; height: auto; text-align: center;">
+		<!-- 영화 목록 -->
 		<div id="movie_list" class="tab-pane col-sm-12" style="border: 0px solid #000; height: auto; margin-top: 10px; padding: 0px;">
-			<div style="text-align: left; padding-left: 10px; padding-top: 9px; font-weight: bolder; font-size: 15px;"><a href="javascript:getMovieList(1)">영화(${movieList.size()}건)<span class="glyphicon glyphicon-plus-sign"></span></a></div>
-			<c:forEach items="${movieList}" var="ml" begin="0" end="3" step="1">
-				<div style="border: 0px solid #000; float: left; margin: 10px; width: 264px; height: 508px; text-align: left;">
-					<span style="width: 264px; height: 358px; text-align: center;"><img src="/resources/images/poster/${ml.poster}" style="width: 100%; max-height: 100%; vertical-align: middle;"></span>
-					<span style="font-weight: bold; font-size: 16px;">${ml.title}</span>
-					<span>등급 : ${ml.rating}</span>
-					<span>장르 : 
-						<c:forEach items="${associateMovie.genre}" var="am" varStatus="amvs">
-							<c:if test="${am.movie_id eq ml.movie_id}">
-								${am.movie_genre}
-							</c:if>
-						</c:forEach>
-					</span>
-					<span>개봉일 : ${fn:substring(ml.open_date, 0, 10)}</span>
-					<span>감독 : 
-						<c:forEach items="${associateMovie.director}" var="am" varStatus="amvs">
-							<c:if test="${am.movie_id eq ml.movie_id}">
-								${am.director_name}
-							</c:if>
-						</c:forEach>
-					</span>
-					<span>배우 : 
-						<c:forEach items="${associateMovie.actor}" var="am" varStatus="amvs">
-							<c:if test="${am.movie_id eq ml.movie_id}">
-								${am.actor_name}
-							</c:if>
-						</c:forEach>
-					</span>
-					<c:choose>
-						<c:when test="${ml.status eq 'play'}">
-							<span><button class="btn btn-danger btn-sm" style="width: 262px; border-radius: 5px; border: 0;" onclick="${ml.movie_id}">예매</button></span>
-						</c:when>
-						<c:when test="${ml.status eq 'schedule'}">
-							<span style="text-align: center; color: #ff4859; font-weight: bold; letter-spacing: 25px;">&nbsp상영예정</span>
-						</c:when>
-					</c:choose>
-				</div>
-			</c:forEach>	
 		</div>
 		<!-- 구분선 -->
 		<div class="line_red"></div>
-		<!-- 배우 리스트 -->
+		
+		<!-- 배우 목록 -->
 		<div id="actor_list" class="col-sm-12" style="border: 0px solid #000; height: auto; padding: 0px; text-align: left;">
-			<div style="text-align: left; padding-left: 10px; padding-top: 9px; font-weight: bolder; font-size: 15px;"><a href="javascript:getActorList(1)">배우(${actorList.size()}건)<span class="glyphicon glyphicon-plus-sign"></span></a></div>
-			<c:forEach items="${actorList}" var="al" begin="0" end="2" step="1">
-				<div style="border: 0px solid #000; float: left; margin: 5px; width: 1128px; height: 90px; line-height: 30px;">
-					<span style="height: 90px; width: 72px; margin-right: 10px;"><img src="${al.actor_photo}" style="width: 100%; height: 100%;"></span>
-					<span>배우이름 : ${al.actor_name}</span>
-					<span>나이 : ${al.actor_age}</span>
-					<span>출연영화 : 
-						<c:forEach items="${movieActor}" var="ma" varStatus="mavs">
-							<c:if test="${ma.actor_name eq al.actor_name}">
-								${ma.title}  	
-							</c:if>
-						</c:forEach>
-					</span>
-				</div>
-			</c:forEach>
 		</div>
+		
+		<!-- 구분선 -->
 		<div class="line_red"></div>
+		
+		<!-- 감독 목록 -->
 		<div id="director_list" class="col-sm-12" style="border: 0px solid #000; height: auto; padding: 0px; text-align: left;">
-			<div style="text-align: left; padding-left: 10px; padding-top: 9px; font-weight: bolder; font-size: 15px;"><a href="javascript:getDirectorList(1)">감독(${directorList.size()}건)<span class="glyphicon glyphicon-plus-sign"></span></a></div>
-			<c:forEach items="${directorList}" var="dl" begin="0" end="2" step="1">
-				<div style="border: 0px solid #000; float: left; margin: 5px; width: 1128px; height: 90px; line-height: 30px;">
-					<span style="height: 90px; width: 72px; margin-right: 10px;"><img src="${dl.director_photo}" style="width: 100%; height: 100%;"></span>
-					<span>감독이름 : ${dl.director_name}</span>
-					<span>나이 : ${dl.director_age}</span>
-					<span>영화 : 
-						<c:forEach items="${movieDirector}" var="md" varStatus="mdvs">
-							<c:if test="${md.director_name eq dl.director_name}">
-								${md.title}   
-							</c:if>
-						</c:forEach>
-					</span>
-				</div>
-			</c:forEach>
 		</div>
+		
+		<!-- 페이징 -->
 		<div id="page" style="height: auto; width: 100%; display: inline-block;"></div>
+		
 	</div>
 	
 	
 <script type="text/javascript">
 	
+	$('#searchCategory a').click(function (e) {
+	    $(this).tab('show');
+	});
 	
-	function getSerachList(){
+	//더보기 눌렀을 때 카테고리 active & 해당하는 목록 페이징
+	function goMovieList(){
+		$("#searchMovie").tab('show');
+		getMovieList(1);
+	}
+	
+	function goActorList(){
+		$("#searchActor").tab('show');
+		getActorList(1);
+	}
+	
+	function goDirectorList(){
+		$("#searchDirector").tab('show');
+		getDirectorList(1);
+	}
+	
+	function getSearchList(){
 		$("#listWrapper").children().show();
 		$("#movie_list").html("");
 		$("#actor_list").html("");
 		$("#director_list").html("");
 		$("#page").hide();
-
+		var search = "${search}";
+		
 		$.ajax({
 			type : 'get',
-			url : '/search',
+			url : '/search/result',
 			headers : {
 				"Content-Type" : "application/json"
 	//			"X-HTTP-Method-Override" : "GET",
@@ -161,25 +129,24 @@
 			dataType : 'json',
 			data : '',
 			success : function(result){
-				setSerachList(result);
+				setSearchList(result);
 				
 			}
 		});
 		
 	}
-	
-	function setSerachList(result){
+	getSearchList();
+	function setSearchList(result){
 		
 		//Movie List
 		var movie_list = "";
 		var am = result.associateMovie;
 	
-		movie_list += '<div style="text-align: left; padding-left: 10px; padding-top: 9px; font-weight: bolder; font-size: 15px;"><a href="javascript:getMovieList(1)">영화('+result.movieList.length+'건)<span class="glyphicon glyphicon-plus-sign"></span></a></div>';
+		movie_list += '<div style="text-align: left; padding-left: 10px; padding-top: 9px; font-weight: bolder; font-size: 15px;"><a id="goMovieList" href="javascript:goMovieList()">영화('+result.movieList.length+'건)<span class="glyphicon glyphicon-plus-sign"></span></a></div>';
 		$(result.movieList).each(function(i){
 			if(i<4){
-				date = new Date(this.open_date);
 				movie_list+=  '<div style="border: 0px solid #000; float: left; margin: 10px; width: 264px; height: 508px; text-align: left;">'
-							+ '<span style="width: 264px; height: 358px; text-align: center;"><img src="'+ this.poster +'" style="width: 100%; height: 100%;"></span>'
+							+ '<span style="width: 264px; height: 358px; text-align: center;"><img src="/resources/images/poster/'+ this.poster +'" style="width: 100%; height: 100%;"></span>'
 						    + '<span style="font-weight: bold; font-size: 16px;">'+ this.title + '</span>'
 							+ '<span>등급 : ' + this.rating + '</span>'
 							+ '<span>장르: ';
@@ -191,7 +158,7 @@
 				}
 				
 				movie_list+=  '</span>'
-							+ '<span>개봉일 : ' + date.toISOString().substring(0, 10) +'</span>'
+							+ '<span>개봉일 : ' + this.open_date +'</span>'
 							+ '<span>감독 : ';
 						
 				for(var k = 0; k<am.director.length; k++){
@@ -217,16 +184,14 @@
 				}
 				
 				movie_list+= '</div>';
-
 			}
-
 		});
 		
 		$("#movie_list").html(movie_list);
 		
 		//Actor List
 		var actor_list = "";
-		actor_list += '<div style="text-align: left; padding-left: 10px; padding-top: 9px; font-weight: bolder; font-size: 15px;"><a href="javascript:getActorList(1)">배우(' + result.actorList.length + '건)<span class="glyphicon glyphicon-plus-sign"></span></a></div>';
+		actor_list += '<div style="text-align: left; padding-left: 10px; padding-top: 9px; font-weight: bolder; font-size: 15px;"><a id="goActorList" href="javascript:goActorList()">배우(' + result.actorList.length + '건)<span class="glyphicon glyphicon-plus-sign"></span></a></div>';
 		$(result.actorList).each(function(i){
 			if(i<3){
 				actor_list+=  '<div style="border: 0px solid #000; float: left; margin: 5px; width: 1128px; height: 90px; line-height: 30px;">'
@@ -250,7 +215,7 @@
 		
 		//Director List
 		var director_list = "";
-		director_list += '<div style="text-align: left; padding-left: 10px; padding-top: 9px; font-weight: bolder; font-size: 15px;"><a href="javascript:getDirectorList(1)">감독(' + result.directorList.length + '건)<span class="glyphicon glyphicon-plus-sign"></span></a></div>';
+		director_list += '<div style="text-align: left; padding-left: 10px; padding-top: 9px; font-weight: bolder; font-size: 15px;"><a id="goDirectorList" href="javascript:goDirectorList()">감독(' + result.directorList.length + '건)<span class="glyphicon glyphicon-plus-sign"></span></a></div>';
 		
 		$(result.directorList).each(function(i){
 			if(i<3){
@@ -279,7 +244,6 @@
 	var startPage = 1;
 	var endPage = 1;
 	var totalPage;
-
 	function setMovieList(ml,am){
 		var a = $("#movie_list");
 		var result = "";
@@ -290,9 +254,8 @@
 		$("#page").show();
 		
 		$(ml).each(function(i){
-			date = new Date(this.open_date);
 			result+=  '<div style="border: 0px solid #000; float: left; margin: 10px; width: 264px; height: 508px; text-align: left;">'
-					+ '<span style="width: 264px; height: 358px; text-align: center;"><img src="'+ this.poster +'" style="width: 100%; height: 100%;"></span>'
+					+ '<span style="width: 264px; height: 358px; text-align: center;"><img src="/resource/images/poster/'+ this.poster +'" style="width: 100%; height: 100%;"></span>'
 					+ '<span style="font-weight: bold; font-size: 16px;">' + this.title + '</span>'
 					+ '<span>등급 : ' + this.rating + '</span>'
 					+ '<span>장르: ';
@@ -304,7 +267,7 @@
 			}
 			
 			result+=  '</span>'
-					+ '<span>개봉일 : ' + date.toISOString().substring(0, 10) +'</span>'
+					+ '<span>개봉일 : ' + this.open_date +'</span>'
 					+ '<span>감독 : ';
 					
 			for(var k = 0; k<am.director.length; k++){
@@ -519,7 +482,6 @@
 					result += am[i].title + '&nbsp&nbsp';
 				}
 			}	
-
 			result+= '</span>'
 				    + '</div>';
 					
@@ -585,9 +547,6 @@
 		});
 		
 	}
-	
-	
-
 	
 </script>
 	

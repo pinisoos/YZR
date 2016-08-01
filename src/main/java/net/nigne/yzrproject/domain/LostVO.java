@@ -32,7 +32,7 @@ public class LostVO {
 	@Column(name="lost_content")
 	String lost_content;
 	
-	@Column(name="complete", nullable=true)
+	@Column(name="complete")
 	String complete;
 
 	public int getNo() {

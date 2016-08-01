@@ -84,7 +84,7 @@
 					result += '<div id="movie_chart'+i+'" style="margin-top:35px;">'
 						+ '<div id="chart" style="width:285px; height:380px; text-align:left; float:left;">'
 						+ '<div style="margin-left:18px;">'
-						+ '<img src="/resources/poster/'+movie[i].poster+'" style="width:249px; height:300px;"/> <br/>'
+						+ '<img src="/resources/images/poster/'+movie[i].poster+'" style="width:249px; height:300px;"/> <br/>'
 						+ '제목 : '+ movie[i].title +' <br/>'
 						+ '관람등급 : '+ movie[i].rating +' <br/>'
 						+ '예매율 : '+ movie[i].reservation_rate +'% <br/>'
@@ -110,7 +110,7 @@
 						+ '<div id="movie_chart'+i+'" style="margin-top:35px;">'
 						+ '<div id="chart" style="width:285px; height:380px; text-align:left; float:left;">'
 						+ '<div style="margin-left:18px;">'
-						+ '<img src="/resources/poster/'+movie[i].poster+'" style="width:249px; height:300px;"/> <br/>'
+						+ '<img src="/resources/images/poster/'+movie[i].poster+'" style="width:249px; height:300px;"/> <br/>'
 						+ '제목 : '+ movie[i].title +' <br/>'
 						+ '관람등급 : '+ movie[i].rating +' <br/>'
 						+ '예매율 : '+ movie[i].reservation_rate +'% <br/>'
@@ -125,7 +125,7 @@
 					result += '<div id="movie_chart'+i+'" style="margin-top:100px;">'
 						+ '<div id="chart" style="width:285px; height:380px; text-align:left; float:left;">'
 						+ '<div style="margin-left:18px;">'
-						+ '<img src="/resources/poster/'+movie[i].poster+'" style="width:249px; height:300px;"/> <br/>'
+						+ '<img src="/resources/images/poster/'+movie[i].poster+'" style="width:249px; height:300px;"/> <br/>'
 						+ '제목 : '+ movie[i].title +' <br/>'
 						+ '관람등급 : '+ movie[i].rating +' <br/>'
 						+ '예매율 : '+ movie[i].reservation_rate +'% <br/>'
@@ -152,7 +152,7 @@
 				result += '<div id="movie_chart" style="margin-top:20px;">'
 					+ '<div id="chart" style="width:285px; height:380px; text-align:left; float:left;">'
 					+ '<div style="margin-left:18px;">'
-					+ '<img src="/resources/poster/'+movie[j].poster+'" style="width:249px; height:300px;"/> <br/>'
+					+ '<img src="/resources/images/poster/'+movie[j].poster+'" style="width:249px; height:300px;"/> <br/>'
 					+ '제목 : '+ movie[j].title +' <br/>'
 					+ '관람등급 : '+ movie[j].rating +' <br/>'
 					+ '예매율 : '+ movie[j].reservation_rate +'% <br/>'
@@ -209,7 +209,6 @@
 		}else if(!play.checked){
 			play.value = "off";
 		}
-		alert(play+"+"+order);
 		$.ajax({
 			type : 'get',
 			url : '/movie/chart/' + play.value + "/" + order.value,

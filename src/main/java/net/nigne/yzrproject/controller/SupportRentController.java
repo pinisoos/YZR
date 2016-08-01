@@ -76,7 +76,7 @@ public class SupportRentController {
 		return entity;
 	}
 	@RequestMapping(value = "/support/rent/new", method = RequestMethod.POST)
-	public ModelAndView supportWriteRent(RentVO vo, @RequestParam("member_id") String member_id, @RequestParam("theater") String theater,
+	public ModelAndView supportWriteRent(RentVO vo, @RequestParam("theater") String theater,
 										@RequestParam("theater_type") String theater_type, @RequestParam("theater_name") String theater_name) throws Exception {
 		
 		vo.setRent_place(theater + " " + theater_type + " " + theater_name);

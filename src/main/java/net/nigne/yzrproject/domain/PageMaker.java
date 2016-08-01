@@ -78,7 +78,7 @@ public class PageMaker {
 
 	private void process(){
 		// 전체 페이지개수
-		int totalPages = (int)Math.ceil(totalArticles / (double)criteria.getArticlePerPage());
+		int totalPages = (int)Math.ceil(totalArticles / (double)pagePerBlock);
 		
 		// 요청한 페이지
 		int currentPage = criteria.getPage(); // 11

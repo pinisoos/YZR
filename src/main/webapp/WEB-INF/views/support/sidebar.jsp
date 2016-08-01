@@ -122,6 +122,9 @@ section {
 						<a href="/support/notice"><font style="font-weight: bold;">공지/뉴스 </font></a>
 					</li>
 					<li>
+						<a href="/support/qna"><font style="font-weight: bold;">1:1 문의 </font></a>
+					</li>
+					<li>
 						<a href="/support/lost"><font style="font-weight: bold;">분실물 문의 </font></a>
 					</li>
 					<li>

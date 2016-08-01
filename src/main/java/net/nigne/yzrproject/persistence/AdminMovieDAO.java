@@ -14,5 +14,6 @@ public interface AdminMovieDAO {
 	public List<MovieVO> getSearchMovieList(Criteria cri, String keyword, String search);
 	public Long getMovieSearchCount(String keyword, String search);
 	void persistGenre(GenreVO gvo);
+	public void statusMovie(String movie_id,String status);
 
 }

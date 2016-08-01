@@ -54,6 +54,7 @@ th{
 						</c:forEach>
 					</select>
 					<select id="theater_name" name="theater_name" style="height: 27px; width: 200px;">
+						<option value="basic">영화관 선택</option>
 					</select>
 					<input type="text" id="place" name="place" size="30">
 				</td>

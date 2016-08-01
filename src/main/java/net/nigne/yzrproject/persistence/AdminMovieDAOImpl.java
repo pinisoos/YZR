@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import net.nigne.yzrproject.domain.Criteria;
 import net.nigne.yzrproject.domain.GenreVO;
 import net.nigne.yzrproject.domain.MovieVO;
+import net.nigne.yzrproject.domain.NoticeVO;
 
 @Repository
 public class AdminMovieDAOImpl implements AdminMovieDAO {
@@ -102,5 +103,12 @@ public class AdminMovieDAOImpl implements AdminMovieDAO {
 	public void persistGenre(GenreVO gvo) {
 		// TODO Auto-generated method stub
 		entityManager.persist(gvo);
+	}
+	@Override
+	public void statusMovie(String movie_id, String status) {
+		// TODO Auto-generated method stub
+		MovieVO findvo=entityManager.find(MovieVO.class, movie_id);
+		MovieVO mergevo=entityManager.merge(findvo);
+		mergevo.setStatus(status);
 	}
 }
