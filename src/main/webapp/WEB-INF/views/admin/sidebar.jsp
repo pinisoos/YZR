@@ -126,7 +126,7 @@ section {
 	padding-left: 15px;
 }
 </style>
-<div id="wrap_content" style="min-height: 100%; position: absolute; left: 250px;">
+<div id="wrap_content" style="min-height: 100%; position: relative;">
 	<nav class="navbar navbar-defalt sidebar" role="navigation">
 	<div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->

@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -32,9 +31,9 @@ public class TimetableController {
 	private TimetableService tt_service;
 	
 	@RequestMapping(value = "/timetable", method = RequestMethod.GET)
-	public String timetable(HttpSession session) throws Exception {
+	public String timetable(Locale locale, Model model) throws Exception {
 		
-		session.setAttribute("menu", "TIMETABLE");
+		
 		
 		return "timetable";
 	}

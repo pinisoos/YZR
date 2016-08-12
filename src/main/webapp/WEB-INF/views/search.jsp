@@ -181,13 +181,13 @@
 		if(search == null || search == ""){
 			$.ajax({
 				type : 'get',
-				url : '/movie/chart/on/예매율순',
+				url : '/movie/main',
 				headers : {
 				"Content-Type" : "application/json",
 				//"X-HTTP-Method-Override" : "GET",  ----  POST 이거나 GET인경우는 생략가능
 				},
 				dataType : 'json',
-				data : '',
+				data : {"category": "chart"},
 				success : function(movie){
 					setDefaultList(movie);
 				}

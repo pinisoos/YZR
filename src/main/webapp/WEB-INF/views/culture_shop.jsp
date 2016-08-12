@@ -11,7 +11,7 @@
 			<div style="border-top:1px solid #000; border-bottom:1px solid #000; width:475px; height:5px; float:left; margin-top:22px;"></div>
 		</h2>
 		
-		<form id="frm" name="frm" action="/store/buy" method="post">
+		<form id="frm" name="frm" action="/culture_shop/buy" method="post">
 			<input type="hidden" id="menu_name" name="menu_name" value="" />
 			<input type="hidden" id="menu_price" name="menu_price" value="" />
 			<input type="hidden" id="menu_img" name="menu_img" value="" />
@@ -95,5 +95,5 @@
 		location.href = "/login";
 	}
 </script>
-<% session.setAttribute("menu", null);%>
+
 <%@include file="./include/footer.jsp" %>

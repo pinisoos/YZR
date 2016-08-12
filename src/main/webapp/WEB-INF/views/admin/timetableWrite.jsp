@@ -9,7 +9,7 @@
 		<%response.sendRedirect("/login");%>
 	</script>
 </c:if>
-<div class="content" style="margin-left: 120px; width: 890px;">
+<div class="content" style="margin-left: 250px;">
 	<h2>상영시간 등록</h2><br><br>
 	<form id="timetableWritefrm" role="form" action="/admin/timetable/new" method="post">
 		<label class="col-sm-2">영화 타이틀</label>

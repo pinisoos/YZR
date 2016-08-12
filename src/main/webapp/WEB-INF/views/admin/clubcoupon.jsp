@@ -13,7 +13,7 @@
 		text-align: center;
 	}
 </style>
-<div class="content" style="margin-left: 120px; width: 890px;">
+<div class="content" style="margin-left: 250px;">
 		<h2>클럽쿠폰 발송</h2><br><br>
 	<form id="clubCouponfrm" name="clubCouponfrm" role="form" action="/admin/clubcoupon" method="post">
 		<input type="hidden" id="club" name="club">

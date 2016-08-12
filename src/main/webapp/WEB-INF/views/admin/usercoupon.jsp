@@ -13,7 +13,7 @@
 		text-align: center;
 	}
 </style>
-<div class="content" style="margin-left: 120px; width: 890px;">
+<div class="content" style="margin-left: 250px;">
 		<h2>개인쿠폰 발송</h2><br><br>
 	<form id="userCouponfrm" name="userCouponfrm" role="form" action="/admin/usercoupon" method="post">
 		<input type="hidden" id="member_id" name="member_id">

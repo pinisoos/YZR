@@ -9,7 +9,7 @@
 		<%response.sendRedirect("/login");%>	
 	</script>
 </c:if>
-<div class="content" style="margin-left: 120px; width: 890px;">
+<div class="content" style="margin-left: 250px;">
 	<h2>영화 등록</h2><br><br>
 	<form id="movieWritefrm" role="form" action="/admin/movie/new" method="post" enctype="multipart/form-data">
 		<label class="col-sm-1">영화ID</label>

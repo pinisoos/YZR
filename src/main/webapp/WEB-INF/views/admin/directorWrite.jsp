@@ -9,7 +9,7 @@
 		<%response.sendRedirect("/login");%>
 	</script>
 </c:if>
-<div class="content" style="margin-left: 120px; width: 890px;">
+<div class="content" style="margin-left: 250px;">
 	<h2>감독 등록</h2><br><br>
 	<form id="directorWritefrm" role="form" action="/admin/director/new" method="post" enctype="multipart/form-data">
 		<label class="col-sm-1">이름</label>
@@ -40,7 +40,7 @@
 		<div>
 			<input type="file" id="file" name="file" size="60" style="padding-left: 20px;"/>
 		</div>
-		<div style="clear: both; margin-top: 50px; text-align: center;">
+		<div style="clear: both; margin-left: 300px;">
 			<button type="submit" class="btn btn-primary">등록</button>
 		</div>
 	</form>

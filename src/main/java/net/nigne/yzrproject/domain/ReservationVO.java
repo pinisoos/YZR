@@ -70,7 +70,7 @@ public class ReservationVO {
 		return theater_id;
 	}
 
-	public void setTheater_name(String theater_id) {
+	public void setTheater_id(String theater_id) {
 		this.theater_id = theater_id;
 	}
 

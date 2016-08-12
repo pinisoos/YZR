@@ -20,7 +20,7 @@ th{
 	background-color: ivory;
 }
 </style>
-<div class="content" style="margin-left: 120px; width: 890px;">
+<div class="content" style="margin-left: 250px;">
 	<div>
 		<label style="font-size: 15pt;">분실물 문의</label><br>
 		분실물을 등록해주시면 확인 후 신속하게 답변 드리겠습니다.<br>

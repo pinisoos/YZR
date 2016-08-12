@@ -14,7 +14,7 @@
 		width: 100px;
 	}
 </style>
-<div class="content" style="margin-left: 120px; width: 890px;">
+<div class="content" style="margin-left: 250px;">
 	<h2>공지 등록</h2><br><br>
 	<form id="noticeWritefrm" name="noticeWritefrm" role="form" action="/admin/notice/new" method="post" enctype="multipart/form-data">
 		<table class="table">

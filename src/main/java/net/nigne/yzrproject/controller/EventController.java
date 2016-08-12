@@ -26,8 +26,8 @@ import net.nigne.yzrproject.service.PurchaseService;
 public class EventController {
 
 	@RequestMapping(value = "/event", method = RequestMethod.GET)
-	public String store(HttpSession session) throws Exception {
-		session.setAttribute("menu", "EVENT&CULTURE");
+	public String store(Locale locale, Model model) throws Exception {
+		
 		return "event";
 	}
 	

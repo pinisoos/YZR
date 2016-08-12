@@ -15,7 +15,7 @@ td{
 	background-color: ivory;
 }
 </style>
-<div class="content" style="margin-left: 120px; width: 890px;">
+<div class="content" style="margin-left: 250px;">
 	<h2>공지/뉴스</h2><br>
 	<table class="table">
 		<thead>

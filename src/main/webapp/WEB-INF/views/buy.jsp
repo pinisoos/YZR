@@ -63,7 +63,7 @@
 
 <script>
 	function store(){
-		location.href = "/store"
+		location.href = "/culture_shop"
 	}
 	
 	function buy(){
@@ -72,5 +72,4 @@
 		frm.submit();
 	}
 </script>
-<% session.setAttribute("menu", null);%>
 <%@include file="./include/footer.jsp" %>

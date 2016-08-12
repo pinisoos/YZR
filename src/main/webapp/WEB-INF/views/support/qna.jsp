@@ -20,7 +20,7 @@ th{
 	background-color: ivory;
 }
 </style>
-<div class="content" style="margin-left: 120px; width: 890px;">
+<div class="content" style="margin-left: 250px;">
 	<div>
 		<label style="font-size: 15pt;">1:1 문의</label><br>
 		자주찾는 질문에서 원하는 답변을 찾지 못하셨군요.<br>

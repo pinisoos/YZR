@@ -14,7 +14,7 @@
 		width: 100px;
 	}
 </style>
-<div class="content" style="margin-left: 120px; width: 890px;">
+<div class="content" style="margin-left: 250px;">
 	<h2>공지 수정</h2><br><br>
 	<form id="noticeWritefrm" name="noticeWritefrm" role="form" action="/admin/notice/new" method="post">
 		<input type="hidden" id="_method" name="_method" value="put">

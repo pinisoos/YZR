@@ -35,7 +35,7 @@
       </div>      
       
     <!-- 검색창 -->
-	<div style="clear: both; width: 100%; height: 34px; margin-top: 20px;">
+	<div style="clear: both; width: 100%; height: 34px;">
 		<form class="form" action="/search" method="post">
 			<div class="form-group" style="clear: both; width: 100%; height: 34px;">
 				<div class="col-sm-10" style="padding: 0; height: 34px;">

@@ -13,7 +13,7 @@ th, td{
 		<% response.sendRedirect("/login");%> 
 	</script>
 </c:if>
-<div class="content" style="margin-left: 120px; width: 890px;">
+<div class="content" style="margin-left: 250px;">
 	<h2>대관 문의</h2>
 	<table class="table table-striped" cellpadding="10">
 		<thead>

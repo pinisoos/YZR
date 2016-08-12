@@ -8,7 +8,7 @@
 		<%response.sendRedirect("/login");%>
 	</script>
 </c:if>
-<div class="content" style="margin-left: 120px; width: 890px;">
+<div class="content" style="margin-left: 250px;">
 	delete
 </div>
 <%@include file="../include/footer.jsp"%>

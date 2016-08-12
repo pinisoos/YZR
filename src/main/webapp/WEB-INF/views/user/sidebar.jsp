@@ -126,7 +126,7 @@ section {
 	padding-left: 15px;
 }
 </style>
-<div id="wrap_content" style="min-height: 100%; position: absolute; left: 250px;">
+<div id="wrap_content" style="min-height: 100%; position: relative;">
 	<nav class="navbar navbar-defalt sidebar" role="navigation">
 	<div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
@@ -145,6 +145,11 @@ section {
 				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style="font-weight: bold;">쿠폰 관리 <span class="caret"></span></a>
 					<ul class="dropdown-menu forAnimate" role="menu">
 						<li><a href="/user/coupon">할인 쿠폰</a></li>
+					</ul>
+				</li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style="font-weight: bold;">포인트 관리 <span class="caret"></span></a>
+					<ul class="dropdown-menu forAnimate" role="menu">
+						<li><a href="/user/point">포인트 적립/사용내역</a></li>
 					</ul>
 				</li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" style="font-weight: bold;">팝콘스토어 <span class="caret"></span></a>

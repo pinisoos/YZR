@@ -6,7 +6,7 @@
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%
-String path = "C:/Users/user1/Desktop/pinisoos/spring/YZR/src/main/webapp/resources/images/review/";
+String path = "E:/git/YZR-1/src/main/webapp/resources/images/review_photo/";
 String path1 = session.getServletContext().getRealPath("/")+"resources/images/review_photo/"; // 이미지가 저장될 주소
 String filename = "";
 

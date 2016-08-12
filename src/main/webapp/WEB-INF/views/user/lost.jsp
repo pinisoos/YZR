@@ -8,7 +8,7 @@
 		<%response.sendRedirect("/login");%>
 	</script>
 </c:if>
-<div class="content" style="margin-left: 120px; width: 890px;">
+<div class="content" style="margin-left: 250px;">
 	<div>
 		<h3>나의 분실물 문의</h3>
 	</div>

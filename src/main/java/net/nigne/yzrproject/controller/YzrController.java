@@ -80,13 +80,9 @@ public class YzrController {
 		}else{
 			MemberVO vo = userInfoService.getMemberInfo(member_id);
 			long couponTotal = userCouponService.getCouponTotal(member_id);
-			Map<String,Object> reservation = reservation_service.getReservation(member_id);
-			long reservationTotal = reservation_service.getReservationTotal(member_id);
 			
 			model.addAttribute("userInfo", vo);
 			model.addAttribute("couponTotal", couponTotal);
-			model.addAttribute("reservation", reservation);
-			model.addAttribute("reservationTotal", reservationTotal);
 			model.addAttribute("today", new Date());
 			session.setAttribute("menu", "MY PAGE");
 			

@@ -9,7 +9,7 @@
 		<%response.sendRedirect("/login");%>
 	</script>
 </c:if>
-<div class="content" style="margin-left: 120px; width: 890px;">
+<div class="content" style="margin-left: 250px;">
 	<h2>상영시간표</h2><br><br>
 	<label class="col-sm-2">상영관 번호</label>
 	<div class="col-md-3">
