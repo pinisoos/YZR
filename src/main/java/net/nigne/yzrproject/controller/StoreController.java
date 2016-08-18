@@ -58,7 +58,7 @@ public class StoreController {
 		vo.setMember_id(member_id);
 		service.payPersist(vo);
 		
-		return new ModelAndView("redirect:/culture_shop");
+		return new ModelAndView("redirect:/store");
 	}
 	
 }

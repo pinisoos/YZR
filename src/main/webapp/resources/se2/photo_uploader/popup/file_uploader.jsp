@@ -6,10 +6,9 @@
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%
-String path = "C:/Users/user1/Desktop/pinisoos/spring/YZR/src/main/webapp/resources/images/review/";
-String path1 = session.getServletContext().getRealPath("/")+"resources/images/review_photo/"; // 이미지가 저장될 주소
+String path = "C:/Users/user1/git/YZR-1/src/main/webapp/resources/images/review/";
 String filename = "";
-
+String member_id = (String)session.getAttribute("member_id");
 if(request.getContentLength() > 10*1024*1024 ){
 %>
 	<script>alert("업로드 용량(총 10Mytes)을 초과하였습니다.");history.back();</script>
@@ -28,7 +27,7 @@ if(request.getContentLength() > 10*1024*1024 ){
 		String upfile = (multi.getFilesystemName("Filedata"));
 		if (!upfile.equals("")) {
 			String dateString = formatter2.format(new java.util.Date());
-			String moveFileName = dateString +"_"+ upfile;
+			String moveFileName = member_id+"_"+upfile ;
 			String fileExt = upfile.substring(upfile.lastIndexOf(".") + 1);
 			File sourceFile = new File(path + File.separator + upfile);
 			File targetFile = new File(path + File.separator + moveFileName);

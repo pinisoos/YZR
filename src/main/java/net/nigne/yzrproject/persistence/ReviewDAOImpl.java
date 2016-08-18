@@ -121,7 +121,7 @@ public class ReviewDAOImpl implements ReviewDAO {
 		Root<ReviewVO> root = cq.from(ReviewVO.class);
 		Predicate p = cb.equal(root.get("movie_id"), movie_id);
 		cq.select(root);
-		cq.where(p);
+		cq.where(p).orderBy(cb.desc(root.get("no")));
 		TypedQuery<ReviewVO> tq = entityManager.createQuery(cq).setFirstResult(criteria.getStartPage()).setMaxResults(criteria.getArticlePerPage());
 		List<ReviewVO> reviewpagelist = tq.getResultList();
 		return reviewpagelist;

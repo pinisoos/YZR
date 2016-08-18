@@ -8,8 +8,7 @@
 		<%response.sendRedirect("/login");%>
 	</script>
 </c:if>
-<<<<<<< HEAD
-<div class="content" style="margin-left: 250px;">
+<div class="content" style="margin-left: 120px; width: 890px;">
 	<div>
 		<h3>기프트콘 관리 </h3>
 	</div>
@@ -38,12 +37,7 @@
 			</div>
 		</div>
 	</div>
-=======
-<div class="content" style="margin-left: 120px; width: 890px;">
-	store
->>>>>>> master
 </div>
-
 <script>
 var num;
 function setNo(no){
@@ -59,7 +53,7 @@ function setStoreList(data){
 				+'<td  style="width:255px; height:100px;">';		
 				if(this.product_name== '콜라(L)'){
 					result+='<img style="height: 100px; width: 180px; vertical-align: baseline;" src="/resources/images/product/coke.png">';
-				}else if(this.product_name== '칠리치즈나초콤보'){
+				}else if(this.product_name== '칠리치즈나쵸콤보'){
 					result+='<img style="height: 100px; width: 180px; vertical-align: baseline;" src="/resources/images/product/combo_set.png">';
 				}else if(this.product_name== '더블치즈팝콘'){
 					result+='<img style="height: 100px; width: 180px; vertical-align: baseline;" src="/resources/images/product/popcorn.png">';

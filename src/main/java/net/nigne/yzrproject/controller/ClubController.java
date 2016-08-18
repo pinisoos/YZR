@@ -25,6 +25,7 @@ import net.nigne.yzrproject.service.ClubService;
 
 @Controller
 public class ClubController {
+	
 	@Autowired
 	private ClubService club_service;
 

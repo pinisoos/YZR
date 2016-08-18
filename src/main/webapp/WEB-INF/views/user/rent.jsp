@@ -77,14 +77,19 @@ var endPage = 1;
 var totalPage; 
 
 function faq(){
-	location.href="/support/faq"
+	location.href="/support/faq";
 }
 function rent_read(no){
 	location.href = "/user/rent/read/" + no;
 }
+function rent(){
+	location.href = "/support/rent";
+}
+
 getRentList(1);
 function setRentList(data){
 	var result = "<tr>";
+	if(data.length >0){
 		$(data).each(function(){
 			result += "<td style='text-align: center;'>" 
 			+this.no
@@ -103,6 +108,12 @@ function setRentList(data){
 			+"</td>"
 			+"</tr>"
 		});
+	}else{
+		result+='<td colspan="4" style="text-align: center; font-size:20px;">'
+		+'문의 내역이 없습니다.'
+		+'</td>'
+		+'</tr>'
+	}
 	document.getElementById("rent_table").innerHTML = result;
 }
 

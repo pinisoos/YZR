@@ -20,37 +20,32 @@
 			</div>
 			<hr>
 			<b>	
-			<div>
-				<span style="margin-left: 20px; margin-bottom: 10px;"> <font
-					face="NanumBarunGothicBold">감독 :</font> <c:forEach
-						items="${directorlist}" var="directorlist">
+				<span style="margin-left: 20px; margin-bottom: 10px;"> 감독 :
+					<c:forEach items="${directorlist}" var="directorlist">
 							 ${directorlist.director_name }	
-						</c:forEach> 
+					</c:forEach> 
 				</span>
-				<br> <span style="margin-left: 20px; margin-bottom: 10px;">배우 : <c:forEach
-						items="${actorlist}" var="actorlist">
-							${actorlist.actor_name }   
-						</c:forEach>
+				<br> 
+				<span style="margin-left: 20px; margin-bottom: 10px;">배우 : 
+					<c:forEach items="${actorlist}" var="actorlist">
+						${actorlist.actor_name }   
+					</c:forEach>
 				</span>
-			</div>
-			<div>
-				<span style="margin-left: 20px; margin-bottom: 10px;">장르 : <c:forEach
-						items="${genrelist}" var="genrelist">
+				<br>
+				<span style="margin-left: 20px; margin-bottom: 10px;">장르 : 
+					<c:forEach items="${genrelist}" var="genrelist">
 							${genrelist.movie_genre }
-						</c:forEach>
+					</c:forEach>
 				</span>
-			</div>
-			<div>
+				<br>
 				<span style="margin-left: 20px; margin-bottom: 10px;"> 개봉일 : ${movievo.open_date } </span>
-			</div>
-			<div>
 				<span style="margin-left: 20px; margin-bottom: 10px;"> 공식 사이트 : ${movievo.site } </span>
-			</div>
-		
-		</div>		
+			</b>
+		</div>	
+		<hr>
 		<div style="margin-left: 140px; margin-top: 80px;">
 			<input type="text" id="review_title" name="review_title" class="form-control" style="width: 864px;"placeholder="제목" />
-			<textarea name="review_content" id="review_content" rows="20" cols="105" style="margin-top: 5px;">
+			<textarea name="review_content" id="review_content" rows="20" cols="120" style="margin-top: 5px;">
 			</textarea>
 			<div>
 				<div>
@@ -60,7 +55,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div>	
 
 <script type="text/javascript">
 	var movie_id = '${movie_id}';

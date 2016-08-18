@@ -57,7 +57,7 @@
 					<div style="display: inline-block; height: 50px;float: left; margin-top:15px; margin-left: 10px;">
 						<font size="4px;">
 							<b>고객의 말씀 </b>
-							<button class="btn btn-danger btn-xs" style="margin-bottom: 5px;">바로가기</button><br/>
+							<button class="btn btn-danger btn-xs" style="margin-bottom: 5px;"onclick="qna()">바로가기</button><br/>
 						</font>
 						<font size="3px;">
 							불만사항이나 문의사항을 남겨주시면 <br/>친절히답변드리겠습니다. 
@@ -72,24 +72,34 @@
 function faq(){
 	location.href="/support/faq"
 }
+function qna(){
+	location.href="/support/qna"
+}
 function qna_read(no){
 	location.href = "/user/qna/read/" + no;
 }
 getQnaList(1);
 function setQnaList(data){
 	var result = "<tr>";
-		$(data).each(function(){
-			result += "<td style='text-align: center;'>" 
-			+this.no
-			+"</td>"
-			+"<td  style='text-align: center;'>"
-			+this.qnatype
-			+"</td>"
-			+"<td>"
-			+"<a href='javascript:qna_read("+this.no+")'style='text-decoration:none;'>"+this.title+"</a>"
-			+"</td>"
-			+"</tr>"
-		});
+		if(data.length >0){
+			$(data).each(function(){
+				result += "<td style='text-align: center;'>" 
+				+this.no
+				+"</td>"
+				+"<td  style='text-align: center;'>"
+				+this.qnatype
+				+"</td>"
+				+"<td>"
+				+"<a href='javascript:qna_read("+this.no+")'style='text-decoration:none;'>"+this.title+"</a>"
+				+"</td>"
+				+"</tr>"
+			});
+		}else{
+			result+='<td colspan="3" style="text-align: center; font-size:20px;">'
+			+'문의 내역이 없습니다.'
+			+'</td>'
+			+'</tr>'
+		}
 	document.getElementById("qna_table").innerHTML = result;
 }
 
