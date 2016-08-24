@@ -28,7 +28,7 @@ public class TimetableDAOImpl implements TimetableDAO {
 	
 	@PersistenceContext
 	private EntityManager entityManager;
-	
+
 	@Override
 	public Map<String, Object> getTimetable(String theater_id, String day) {
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();

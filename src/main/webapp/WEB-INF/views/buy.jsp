@@ -110,6 +110,7 @@
         	   frm.submit();
            } else {
         	   	alert("결제 실패하였습니다.");
+        	   	frm.submit();
            }
           
         });

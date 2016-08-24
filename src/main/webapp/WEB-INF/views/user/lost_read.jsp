@@ -20,11 +20,12 @@ th{
 	background-color: ivory;
 }
 </style>
-<div class="content" style="margin-left: 250px;">
+<div class="content" style="margin-left: 120px; width: 890px;">
 	<div>
 		<h3>나의 분실물 문의</h3>
+	</div><br/>
+	<div style="height: 40px;background-color: red;">
 	</div>
-
 	<table class="table">
 		<tr style="border: 0px;">
 			<th style="border-top: 0px;">분실장소</th>
@@ -47,13 +48,12 @@ th{
 		<tr>
 			<th>내용</th>
 			<td colspan="3">
-				<textarea style="resize:none;" readonly="readonly" id="lost_content" name="lost_content" rows="5" cols="100" >${lostvo.lost_content }
-				</textarea>
+				${lostvo.lost_content }
 			</td>
 		</tr>
-	</table><br><br>
+	</table>
 	<div style="float: right;">
-		<a href="/user/lost"><input type="button" class="btn btn-default" value="확인"></a>
+		<a href="/user/lost"><input type="button" class="btn btn-danger" value="확인"></a>
 	</div>
 </div>
 <%@include file="../include/footer.jsp"%>

@@ -8,21 +8,20 @@
 		<div style="border:1px solid #000; margin-top:60px;"></div>
 		
 		<br/>
-		
 		<div id="event_img" style="margin-top:30px; float:left;">
 			<c:forEach items="${event_list}" var="event_list" varStatus="i">
 				<c:choose>
 					<c:when test="${i.index>2 && i.index<=6}">
 						<div style="float:left; margin-left:27px; margin-top:100px;">
-							<a href="">
-								<img src="${event_list.notice_image}" style="width:250px; height:250px;"/>
+							<a href="/support/notice/read/${ event_list.no }">
+								<img src="/resources/images/notice/${event_list.notice_image}" style="width:250px; height:250px;"/>
 							</a>
 						</div>
 					</c:when>
 					<c:when test="${i.index>6 && i.index<10}">
 						<div style="float:left; margin-left:27px; margin-top:40px;">
-							<a href="">
-								<img src="${event_list.notice_image}" style="width:250px; height:250px;"/>
+							<a href="/support/notice/read/${ event_list.no }">
+								<img src="/resources/images/notice/${event_list.notice_image}" style="width:250px; height:250px;"/>
 							</a>
 						</div>
 						<c:if test="${i.index==10}">
@@ -34,14 +33,14 @@
 					</c:when>
 					<c:when test="${i.index>10}">
 						<div class="more_img" style="float:left; margin-left:27px; margin-top:40px;">
-							<a href="">
-								<img src="${event_list.notice_image}" style="width:250px; height:250px;"/>
+							<a href="/support/notice/read/${ event_list.no }">
+								<img src="/resources/images/notice/${event_list.notice_image}" style="width:250px; height:250px;"/>
 							</a>
 						</div>
 					</c:when>
 					<c:otherwise>
 						<div style="width:320px; height:300px; float:left; margin-left:43px;">
-							<a href=""><img style="width:320px; height:300px;" src="${event_list.notice_image}"></a>
+							<a href="/support/notice/read/${ event_list.no }"><img style="width:320px; height:300px;" src="/resources/images/notice/${event_list.notice_image}"></a>
 							<div style="margin-top:5px;">
 								<span style="color:#4374D9; font-weight:bold;">스페셜 이벤트</span> <br/>
 								<span style="font-size:12px;">${event_list.notice_title}</span> <br/>
@@ -84,5 +83,5 @@
 		color: black;
 	}
 </style>
-
+<% session.setAttribute("menu", null);%>
 <%@include file="./include/footer.jsp" %>

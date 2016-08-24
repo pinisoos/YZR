@@ -206,7 +206,7 @@ public class MovieDAOImpl implements MovieDAO {
 			if(actor_movie.isEmpty()){
 				for(int a=0; a<actor_list.size(); a++){
 					actorSubQuery.select(actorSubQueryRoot.get("movie_id"));
-					actorSubQuery.where(cb.equal(actorSubQueryRoot.get("movie_genre"), actor_list.get(a)));
+					actorSubQuery.where(cb.equal(actorSubQueryRoot.get("actor_name"), actor_list.get(a)));
 					
 					movieQuery.where(cb.and(movieRoot.get("movie_id").in(actorSubQuery), cb.equal(movieRoot.get("status"), "play")));
 					movieQuery.orderBy(cb.desc(movieRoot.get("open_date")));
@@ -290,7 +290,7 @@ public class MovieDAOImpl implements MovieDAO {
 			if(director_movie.isEmpty()){
 				for(int d=0; d<director_list.size(); d++){
 					directorSubQuery.select(directorSubQueryRoot.get("movie_id"));
-					directorSubQuery.where(cb.equal(directorSubQueryRoot.get("movie_genre"), director_list.get(d)));
+					directorSubQuery.where(cb.equal(directorSubQueryRoot.get("director_name"), director_list.get(d)));
 					
 					movieQuery.where(cb.and(movieRoot.get("movie_id").in(directorSubQuery), cb.equal(movieRoot.get("status"), "play")));
 					movieQuery.orderBy(cb.desc(movieRoot.get("open_date")));

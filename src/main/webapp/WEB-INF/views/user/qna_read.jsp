@@ -23,9 +23,11 @@ th{
 <div class="content" style="margin-left: 120px; width: 890px;">
 	<div>
 		<h3>나의 1:1 문의</h3>
+	</div><br>
+	<div style="height: 40px;background-color: red;">
 	</div>
-
 	<table class="table">
+		</tr>
 		<tr style="border: 0px;">
 			<th style="border-top: 0px;">문의유형</th>
 			<td colspan="3" style="border-top: 0px;">
@@ -41,13 +43,12 @@ th{
 		<tr>
 			<th>내용</th>
 			<td colspan="3">
-				<textarea style="resize:none;" readonly="readonly" id="rent_content" name="rent_content" rows="5" cols="100" >${qnavo.content }
-				</textarea>
+				${qnavo.content }
 			</td>
 		</tr>
-	</table><br><br>
+	</table>
 	<div style="float: right;">
-		<a href="/user/qna"><input type="button" class="btn btn-default" value="확인"></a>
+		<a href="/user/qna"><input type="button" class="btn btn-danger" value="확인"></a>
 	</div>
 </div>
 <%@include file="../include/footer.jsp"%>

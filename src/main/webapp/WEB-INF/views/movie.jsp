@@ -67,10 +67,10 @@
                   + '<img src="/resources/images/poster/'+movie[i].poster+'" style="width:249px; height:300px;"/> <br/>'
                   + '</a>'
                   + '<span style="font-weight:bold; font-size:15px;">'+ movie[i].title +' </span><br/>'
-                  + '관람등급 : '+ movie[i].rating +' <br/>'
+                  + '관람등급 : <span id="rating_color'+i+'">'+ movie[i].rating +'</span> <br/>'
                   + '예매율 : '+ movie[i].reservation_rate +'% <br/>'
                   + '개봉날짜 : '+ movie[i].open_date +' <br/>'
-                  + '<input type="button" id="res_btn" name="res_btn" class="btn btn-danger btn-sm" onclick="" value="예매" style="width:250px; display:inline-block; margin-top:7px;"/>'
+                  + '<input type="button" id="res_btn'+i+'" name="res_btn'+i+'" class="btn btn-danger btn-sm" onclick="" value="예매" style="width:250px; display:inline-block; margin-top:7px;"/>'
                   + '</div>'
                   + '</div>'
                   + '</div>';
@@ -95,10 +95,10 @@
                   + '<img src="/resources/images/poster/'+movie[i].poster+'" style="width:249px; height:300px;"/> <br/>'
                   + '</a>'
                   + '<span style="font-weight:bold; font-size:15px;">'+ movie[i].title +' </span><br/>'
-                  + '관람등급 : '+ movie[i].rating +' <br/>'
+                  + '관람등급 : <span id="rating_color'+i+'">'+ movie[i].rating +'</span> <br/>'
                   + '예매율 : '+ movie[i].reservation_rate +'% <br/>'
                   + '개봉날짜 : '+ movie[i].open_date +' <br/>'
-                  + '<input type="button" id="res_btn" name="res_btn" class="btn btn-danger btn-sm" onclick="" value="예매" style="width:250px; display:inline-block; margin-top:7px;"/>'
+                  + '<input type="button" id="res_btn'+i+'" name="res_btn'+i+'" class="btn btn-danger btn-sm" onclick="" value="예매" style="width:250px; display:inline-block; margin-top:7px;"/>'
                   + '</div>'
                   + '</div>'
                   + '</div>'
@@ -112,16 +112,14 @@
                   + '<img src="/resources/images/poster/'+movie[i].poster+'" style="width:249px; height:300px;"/> <br/>'
                   + '</a>'
                   + '<span style="font-weight:bold; font-size:15px;">'+ movie[i].title +' </span><br/>'
-                  + '관람등급 : '+ movie[i].rating +' <br/>'
+                  + '관람등급 : <span id="rating_color'+i+'">'+ movie[i].rating +'</span> <br/>'
                   + '예매율 : '+ movie[i].reservation_rate +'% <br/>'
                   + '개봉날짜 : '+ movie[i].open_date +' <br/>'
-                  + '<input type="button" id="res_btn" name="res_btn" class="btn btn-danger btn-sm" onclick="" value="예매" style="width:250px; display:inline-block; margin-top:7px;"/>'
+                  + '<input type="button" id="res_btn'+i+'" name="res_btn'+i+'" class="btn btn-danger btn-sm" onclick="" value="예매" style="width:250px; display:inline-block; margin-top:7px;"/>'
                   + '</div>'
                   + '</div>'
                   + '</div>';
             }
-            
-            
          }
       }else if(category == "schedule"){
          menu.hide();
@@ -143,10 +141,10 @@
                         + '<img src="/resources/images/poster/'+movie[j].poster+'" style="width:249px; height:300px;"/> <br/>'
                         + '</a>'
                         + '<span style="font-weight:bold; font-size:15px;">'+ movie[j].title +' </span><br/>'
-                        + '관람등급 : '+ movie[j].rating +' <br/>'
+                        + '관람등급 : <span id="rating_color'+j+'">'+ movie[j].rating +'</span> <br/>'
                         + '예매율 : '+ movie[j].reservation_rate +'% <br/>'
                         + '개봉날짜 : '+ movie[j].open_date +' <br/>'
-                        + '<input type="button" id="res_btn" name="res_btn" class="btn btn-danger btn-sm" onclick="" value="예매" style="width:250px; display:inline-block; margin-top:7px;"/>'
+                        + '<input type="button" id="res_btn'+i+'" name="res_btn'+i+'" class="btn btn-danger btn-sm" onclick="" value="예매" style="width:250px; display:inline-block; margin-top:7px;"/>'
                         + '</div>'
                         + '</div>'
                         + '</div>';
@@ -158,10 +156,10 @@
                         + '<img src="/resources/images/poster/'+movie[j].poster+'" style="width:249px; height:300px;"/> <br/>'
                         + '</a>'
                         + '<span style="font-weight:bold; font-size:15px;">'+ movie[j].title +' </span><br/>'
-                        + '관람등급 : '+ movie[j].rating +' <br/>'
+                        + '관람등급 : <span id="rating_color'+j+'">'+ movie[j].rating +'</span> <br/>'
                         + '예매율 : '+ movie[j].reservation_rate +'% <br/>'
                         + '개봉날짜 : '+ movie[j].open_date +' <br/>'
-                        + '<input type="button" id="res_btn" name="res_btn" class="btn btn-danger btn-sm" onclick="" value="예매" style="width:250px; display:inline-block; margin-top:7px;"/>'
+                        + '<input type="button" id="res_btn'+i+'" name="res_btn'+i+'" class="btn btn-danger btn-sm" onclick="" value="예매" style="width:250px; display:inline-block; margin-top:7px;"/>'
                         + '</div>'
                         + '</div>';
                   }
@@ -172,10 +170,10 @@
                      + '<img src="/resources/images/poster/'+movie[j].poster+'" style="width:249px; height:300px;"/> <br/>'
                      + '</a>'
                      + '<span style="font-weight:bold; font-size:15px;">'+ movie[j].title +' </span><br/>'
-                     + '관람등급 : '+ movie[j].rating +' <br/>'
+                     + '관람등급 : <span id="rating_color'+j+'">'+ movie[j].rating +'</span> <br/>'
                      + '예매율 : '+ movie[j].reservation_rate +'% <br/>'
                      + '개봉날짜 : '+ movie[j].open_date +' <br/>'
-                     + '<input type="button" id="res_btn" name="res_btn" class="btn btn-danger btn-sm" onclick="" value="예매" style="width:250px; display:inline-block; margin-top:7px;"/>'
+                     + '<input type="button" id="res_btn'+i+'" name="res_btn'+i+'" class="btn btn-danger btn-sm" onclick="" value="예매" style="width:250px; display:inline-block; margin-top:7px;"/>'
                      + '</div>'
                      + '</div>';
                }
@@ -183,6 +181,19 @@
          }   
       }
       document.getElementById("ajax_movie").innerHTML = result;
+      
+      for(var x=0; x<movie.length; x++){
+    	  if($("#rating_color"+x).text() == "12" || $("#rating_color"+x).text() == "15"){
+    		  $("#rating_color"+x).html($("#rating_color"+x).text()+"세 관람가");
+    	  }else if($("#rating_color"+x).text() == "전체"){
+    		  $("#rating_color"+x).html("전체 관람가");
+    		  $("#rating_color"+x).css("color", "blue");
+    	  }else if($("#rating_color"+x).text() == "청불"){
+    		  $("#rating_color"+x).html("청소년 관람불가");
+    		  $("#rating_color"+x).css("color", "red");
+    	  }
+    	  $("#rating_color"+x).css("font-weight", "bold");
+      }
    }
    
    function getMovieByCategory(category){

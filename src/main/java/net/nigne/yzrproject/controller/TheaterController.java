@@ -38,6 +38,7 @@ public class TheaterController {
 	@RequestMapping(value = "/theater", method = RequestMethod.GET)
 	public String timetable(Model model, HttpServletRequest request) throws Exception {
 		HttpSession session = request.getSession();
+		session.setAttribute("menu", "THEATER");
 		String member_id = (String)session.getAttribute("member_id");
 		List<TheaterVO> like_th = tt_service.getLike_theater(member_id);
 		model.addAttribute("like_th", like_th);

@@ -21,7 +21,7 @@
 	</div>
 	<div>
 		<table class="table" style="margin-top: 30px;">
-			<tr style="background-color: red">
+			<tr style="background-color: red; color: white;">
 				<th style="text-align: center;">번호</th>
 				<th width="60%" style="text-align: center;">문의 내용</th>
 				<th style="text-align: center;">등록일</th>
@@ -93,9 +93,13 @@ function setLostList(data){
 				+"<td  style='text-align: center;'>"
 				+this.lost_date
 				+"</td>"
-				+"<td  style='text-align: center;'>"
-				+this.complete
-				+"</td>"
+				+"<td  style='text-align: center;'>";
+				if(this.complete == 'N'){
+					result+= "<font style='font-weight: bold; color: red;'>처리중</font>"
+				}else{
+					result+="<font style='font-weight: bold; color: blue;'>완료</font>"
+				};
+				result+="</td>"
 				+"</tr>"
 			});
 		}else{

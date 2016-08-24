@@ -60,7 +60,7 @@ public class SupportLostController {
 		service.persist(vo);
 		
 		ModelAndView view=new ModelAndView();
-		view.setViewName("support/index");
+		view.setViewName("redirect:/support/index");
 		return view;
 	}
 }

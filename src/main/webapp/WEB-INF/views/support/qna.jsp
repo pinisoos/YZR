@@ -48,7 +48,7 @@ th{
 				<th style="border-top: 0px;">문의 유형</th>
 				<td colspan="3" style="border-top: 0px;">
 					<form role="form">
-						<label class="radio-inline"><input type="radio" name="qnatype" value="문의">문의</label>
+						<label class="radio-inline"><input type="radio" name="qnatype" checked="checked" value="문의">문의</label>
 						<label class="radio-inline"><input type="radio" name="qnatype" value="칭찬">칭찬</label>
 						<label class="radio-inline"><input type="radio" name="qnatype" value="불만">불만</label>
 						<label class="radio-inline"><input type="radio" name="qnatype" value="제안">제안</label>

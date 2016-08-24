@@ -106,14 +106,14 @@ hr.hrone, hr.hrtwo {
 				<div id="listbtdiv" style="margin-right: 0px;" >
 					<button type="button" class="btn btn-danger" onclick="toList()">목록</button>
 					<c:choose>
-						<c:when test="${member_id == reviewvo.member_id }">
+						<c:when test="${member_id == reviewvo.member_id && member_id != 'admin'}">
 							<button type="button" class="btn btn-danger" onclick="eidt_review()" >수정</button>
 							<button type="button" class="btn btn-danger" onclick="delete_review()">삭제</button>
 						</c:when>
-						<c:when  test="${member_id == 'admin'}">
+						<c:when test="${member_id == 'admin'}">
 							<button type="button" class="btn btn-danger" onclick="delete_review()">삭제</button>
 						</c:when>
-					</c:choose>
+					</c:choose>	
 				</div>
 			</div>
 			<hr class="hrone">
